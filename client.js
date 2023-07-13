@@ -10,11 +10,8 @@ const connect = function () { //establish connect function
 
   conn.on("connect", () => {
     console.log("Successfully connected to game server!")
-  })
-  
-  conn.on("connect", () => {
     conn.write("Name: CNM");
-  });
+  })
 
   conn.on("data", data => { //when data sent
     console.log(data); //log data
@@ -23,9 +20,4 @@ const connect = function () { //establish connect function
   return conn;
 };
 
-const { setEncoding, on } = connect();
-
-module.exports = {
-  setEncoding,
-  on,
-};
+module.exports = connect;
