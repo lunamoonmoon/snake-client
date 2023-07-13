@@ -12,7 +12,7 @@ const setupInput = function (conn) {
   return stdin;
 };
 
-const handleUserInput = function (key) { //move when wasd keys pressed
+const handleUserInput = function (key) { //movement for wasd keys
   switch (key) {
     case '\u0003': //if ctrl c
       process.exit(); //exit game
@@ -28,6 +28,12 @@ const handleUserInput = function (key) { //move when wasd keys pressed
       break;
     case 'd':
       connection.write("Move: right");
+      break;
+    case 'p':
+      connection.write("Say: Pet me!");
+      break;
+    case 'h':
+      connection.write("Say: I\'m hungry :<");
       break;
   }
 };
